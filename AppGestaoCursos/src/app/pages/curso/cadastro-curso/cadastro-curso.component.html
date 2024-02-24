@@ -1,0 +1,37 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="mb-2">
+    <label>Nome do curso:</label>
+    <input type="text" class="form-control" placeholder="Digite aqui" formControlName="nome" />
+    <div class="text-danger" *ngIf="f['nome']?.touched && f['nome']?.invalid">
+      Por favor, informe o nome do curso.
+    </div>
+  </div>
+
+  <div class="mb-2">
+    <label>Descrição do curso:</label>
+    <input type="text" class="form-control" placeholder="Digite aqui" formControlName="descricao" />
+    <div class="text-danger" *ngIf="f['descricao']?.touched && f['descricao']?.invalid">
+      Por favor, informe a descrição do curso.
+    </div>
+  </div>
+
+  <div class="mb-2">
+    <label>Data do inicio do curso:</label>
+    <input type="datetime-local" class="form-control" formControlName="data_inicio" />
+    <div class="text-danger" *ngIf="f['data_inicio']?.touched && f['data_inicio']?.invalid">
+      Por favor, informe a data do inicio do curso.
+    </div>
+  </div>
+
+  <div class="mb-2">
+    <label>Data do final do curso:</label>
+    <input type="datetime-local" class="form-control" formControlName="data_fim" />
+    <div class="text-danger" *ngIf="f['data_fim']?.touched && f['data_fim']?.invalid">
+      Por favor, informe a data do final do curso.
+    </div>
+  </div>
+
+  <div class="mb-2 d-grid">
+    <input type="submit" class="btn btn-success" value="Cadastrar Curso" [disabled]="form.invalid" />
+  </div>
+</form>

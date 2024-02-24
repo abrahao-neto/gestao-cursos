@@ -1,0 +1,23 @@
+/* Seu arquivo CSS */
+.navbar-nav .nav-link {
+  padding: 5px;
+  display: inline-block;
+  transition: background-color 0.3s;
+  font-size: 18px;
+  margin: 5px;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  background-color: #ced0d3;
+  color: #fff;
+}
+
+
+.navbar-brand {
+  font-style: italic;
+  font-family: sans-serif;
+  color: rgb(138, 135, 135);
+}
+
+

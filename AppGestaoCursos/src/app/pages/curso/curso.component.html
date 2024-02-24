@@ -1,0 +1,54 @@
+<!-- table-card.component.html -->
+
+<div class="card">
+  <nav>
+    <div class="title">
+      <h4>Cursos</h4>
+    </div>
+    <div class="actions">
+      <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#salvarDados">
+        <i class="fas fa-plus"></i> Novo
+      </button>
+    </div>
+  </nav>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Descrição</th>
+        <th scope="col">Data do inicio</th>
+        <th scope="col">Data do final</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let curso of cursos; let i = index;">
+      <tr>
+        <th scope="row">{{ i + 1 }}</th>
+        <td scope="row">{{ curso.nome }}</td>
+        <td scope="row">{{ curso.descricao }}</td>
+        <td scope="row">{{ curso.data_Inicio | date: 'dd/MM/yyyy HH:mm:ss' }}</td>
+        <td scope="row">{{ curso.data_Fim | date: 'dd/MM/yyyy HH:mm:ss' }}</td>
+        <td scope="row">
+          <button class="btn btn-primary btn-sm btnEditar"><i class="fas fa-edit"></i></button>
+          <button class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Modal  -->
+  <div class="modal fade" id="salvarDados" tabindex="-1" aria-labelledby="salvarDadosLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="salvarDadosLabel">{{ title }}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <app-cadastro-curso></app-cadastro-curso>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

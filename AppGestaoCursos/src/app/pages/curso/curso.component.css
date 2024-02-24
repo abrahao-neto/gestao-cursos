@@ -1,0 +1,65 @@
+/* table-card.component.css */
+
+.card {
+  width: 80%;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+.title {
+  flex-grow: 1;
+  color: rgb(138, 135, 135);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.btn i {
+  margin-right: 5px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.btnEditar {
+  margin-right: 10px;
+}

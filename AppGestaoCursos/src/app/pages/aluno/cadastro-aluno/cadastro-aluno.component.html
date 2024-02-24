@@ -1,0 +1,40 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="mb-2">
+    <label>Nome do aluno:</label>
+    <input type="text" class="form-control" placeholder="Digite aqui" formControlName="nome" />
+    <div class="text-danger" *ngIf="f['nome']?.touched && f['nome']?.invalid">
+      Por favor, informe o nome do aluno.
+    </div>
+  </div>
+
+  <div class="mb-2">
+    <label>Data de nascimento do aluno:</label>
+    <input type="datetime-local" class="form-control" formControlName="data_nascimento" />
+    <div class="text-danger" *ngIf="f['data_nascimento']?.touched && f['data_nascimento']?.invalid">
+      Por favor, informe a data de nascimento do aluno.
+    </div>
+  </div>
+
+  <div class="mb-2">
+    <label>Email do aluno:</label>
+    <input type="text" class="form-control" placeholder="Digite aqui" formControlName="email" />
+    <div class="text-danger" *ngIf="f['email']?.touched && f['email']?.invalid">
+      Por favor, informe o email do aluno.
+    </div>
+  </div>
+
+  <div class="mb-2">
+    <label>Selecione um curso:</label>
+    <select class="form-select" formControlName="cursoId">
+      <option value="">Escolha uma opção</option>
+      <option *ngFor="let item of cursos" value="{{ item.id }}">{{ item.nome }} - {{ item.descricao }}</option>
+    </select>
+    <div class="text-danger" *ngIf="f['cursoId']?.touched && f['cursoId']?.invalid">
+      Por favor, selecione o ID do curso.
+    </div>
+  </div>
+
+  <div class="mb-2 d-grid">
+    <input type="submit" class="btn btn-success" value="Salvar Aluno" [disabled]="form.invalid" />
+  </div>
+</form>
